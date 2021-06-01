@@ -1,0 +1,23 @@
+"""Exercie 1"""
+import sys
+import re
+paths=[f"D:/Users/Idrissa/Desktop/input{i}.txt" for i in range(1,6)]
+for input,output in zip([f"D:/Users/Idrissa/Desktop/input{i}.txt" for i in range(1,6)], [f"D:/Users/Idrissa/Desktop/output{i}.txt" for i in range(1,6)]):
+    fin=open(input, encoding='utf-8')
+    fout=open(output, encoding='utf-8')
+    lines = []
+    for line in fin:
+        lines.append(line.rstrip('\n'))
+    """
+    pattern="(\w{1,10})(\d{5,5})"
+    for test_string in lines[1:]:
+        if re.match(pattern,test_string):
+            count+=1
+    """
+    pattern1="[\w{15}]"
+    pattern2="\d{5}"
+    count=0
+    for test_string in lines[1:]:
+        if re.match(pattern1,test_string) and re.match(pattern2,test_string[-1:-6:-1]):
+            count+=1
+    print(str(count)+" vs "+fout.readline())
