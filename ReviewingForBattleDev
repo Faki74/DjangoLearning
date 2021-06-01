@@ -1,9 +1,8 @@
 """Exercie 1"""
 import sys
 import re
-"Code for me"
-paths=[f"D:/Users/Idrissa/Desktop/input{i}.txt" for i in range(1,6)]
-for input,output in zip([f"D:/Users/Idrissa/Desktop/input{i}.txt" for i in range(1,6)], [f"D:/Users/Idrissa/Desktop/output{i}.txt" for i in range(1,6)]):
+"Specify files location in -path- "
+for input,output in zip([f"path/input{i}.txt" for i in range(1,6)], [f"path/output{i}.txt" for i in range(1,6)]):
     fin=open(input, encoding='utf-8')
     fout=open(output, encoding='utf-8')
     lines = []
